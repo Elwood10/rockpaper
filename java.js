@@ -1,7 +1,9 @@
-let pick = "one";
-let userPick = "me";
+let count = 0;
+let count1 = 0;
 
 function rockPaper() {
+  let pick = "one";
+
   let nameOne = "Rock";
   let nameTwo = "Paper";
   let nameThree = "Scissors";
@@ -29,7 +31,7 @@ function rockPaper() {
   let restOfWord = choice.slice(1, 100);
   let start = firstLetter.toUpperCase();
   let end = restOfWord.toLowerCase();
-  var userPick = start + end;
+  let userPick = start + end;
 
   var winner;
   // set up win or lose function
@@ -42,12 +44,24 @@ function rockPaper() {
   else if (userPick == "Scissors" && pick !== "Paper") winner = "You Lose";
   else if ((userPick !== nameOne, nameTwo, nameThree))
     alert("Check your typing");
-  console.log(winner);
-  //rockPaper();
+
+  if (winner == "You Win!") {
+    count++;
+  }
+  if (winner == "You Lose") {
+    count1++;
+  }
+  if (winner == "tie") {
+    count++ && count1++;
+  }
 }
-rockPaper(userPick, pick);
 
 //function to run game 5 times
-for (i = 1; i < 5; i++) {
+for (i = 1; i < 6; i++) {
   rockPaper();
+  console.log(count);
+  console.log(count1);
 }
+if ((count = count1)) console.log("It's a Tie");
+if (count > count1) console.log("You beat the Computer");
+if (count < count1) console.log("Sorry, You Lost");
